@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Design by foolishdeveloper.com -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip A Coin</title>
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <!--Stylesheet-->
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CDN Ends -->
+  <!-- Links for Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Itim&family=Mali:wght@300&family=Rock+Salt&display=swap" rel="stylesheet">
+  <!-- Links For Google Fonts Ended -->
+
+</head>
+
+<body>
+  <nav>
+    <a href="tiktaktoe.tk">Toss The Coin</a>
+  </nav>
+  <div class="container">
+    <div class="toss-container">
+
+      <div class="coin" id="coin">
+        <div class="heads">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKPXdeMWZbX3Vk9Qc3tgGtERTCZNe5z1OyzXN8ZejoIrXgA95Wi4mfTV3BgGr0lGHO5I4&usqp=CAU">
+        </div>
+        <div class="tails">
+          <img src="https://jkscoinworld.com/wp-content/uploads/2018/05/2013-a-1.jpg">
+        </div>
+      </div>
+      <div class="stats">
+        <p id="heads-count">Heads: 0</p>
+        <p id="tails-count">Tails: 0</p>
+      </div>
+      <div class="buttons">
+        <button id="flip-button">
+          Flip Coin
+        </button>
+        <button id="reset-button">
+          Reset
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- About Box -->
+  <div class="info-Me">
+    <img src="../Toss/images/person-1.jpg" alt="Babaji ka thullu...!">
+    <h3>Vivek Lohar</h3>
+    <a href="https://www.instagram.com/vivek_7_lohar/"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+  <!-- About Box -->
+  <!-- Footer -->
+  <footer>
+    Designed and created by Vivek Lohar 2022 <br>
+    all rights reserved <br>
+    Copyright 2022 | Vivek Lohar
+  </footer>
+  <!-- Footer Ends Here-->
+
+  <script>
+    let heads = 0;
+    let tails = 0;
+    let coin = document.querySelector(".coin");
+    let flipBtn = document.querySelector("#flip-button");
+    let resetBtn = document.querySelector("#reset-button");
+
+    flipBtn.addEventListener("click", () => {
+      let i = Math.floor(Math.random() * 2);
+      coin.style.animation = "none";
+      if (i) {
+        setTimeout(function() {
+          coin.style.animation = "spin-heads 3s forwards";
+        }, 100);
+        heads++;
+      }
+      else {
+        setTimeout(function() {
+          coin.style.animation = "spin-tails 3s forwards";
+        }, 100);
+        tails++;
+      }
+      setTimeout(updateStats, 3000);
+      disableButton();
+    });
+
+    function updateStats() {
+      document.querySelector("#heads-count").textContent = `Heads: ${heads}`;
+      document.querySelector("#tails-count").textContent = `Tails: ${tails}`;
+    }
+
+    function disableButton() {
+      flipBtn.disabled = true;
+      setTimeout(function() {
+        flipBtn.disabled = false;
+      }, 3000);
+    }
+    resetBtn.addEventListener("click", () => {
+      coin.style.animation = "none";
+      heads = 0;
+      tails = 0;
+      updateStats();
+    });
+  </script>
+</body>
+
+</html>

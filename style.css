@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bebas+Neue&family=Bungee&family=Comfortaa:wght@300&family=Edu+VIC+WA+NT+Beginner&family=Poiret+One&family=Trade+Winds&display=swap');
+
+/* 
+Google Fonts
+
+font-family: 'Amatic SC', cursive;
+font-family: 'Itim', cursive;
+font-family: 'Mali', cursive;
+font-family: 'Rock Salt', cursive;
+*/
+
+
+:root {
+  --base-shade-1: #4456ff;
+  --white-shade-1: #ffffff;
+  --white-shade-2: #d7e1f3;
+  --black-shade-1: #232323;
+  --black-shade-2: #676a8b;
+  --grad-color-1: 0, 180, 250;
+  --grad-color-2: 21, 120, 255;
+  --grad-color-8: 69, 86, 255;
+  --grad-color-9: 69, 86, 255;
+
+  --base-font-size: 1.6rem;
+
+  --heading-font-size-1: 4rem;
+  --heading-font-size-2: 3.2rem;
+  --heading-font-size-3: 2rem;
+  --heading-font-size-4: 1.8rem;
+
+  --border-radius-1: 1rem;
+  --border-radius-2: 0.5rem;
+}
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Edu VIC WA NT Beginner', cursive;
+}
+
+body {
+    background-image: linear-gradient(45deg,
+        rgba(var(--grad-color-1), 0.8),
+        rgba(var(--grad-color-2), 0.8)),
+      url(../Toss/images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom-width: 20px;
+  background: rgba(000, 0, 0, .87);
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-family: 'Trade Winds', cursive;
+}
+
+.container {
+  height: 40rem;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toss-container {
+  width: 95%;
+  height: 60%;
+  border-radius: 10px;
+  box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.65);
+}
+
+.stats {
+  display: flex;
+  color: #000;
+  font-weight: 500;
+  padding: 20px;
+  margin-bottom: 40px;
+  margin-top: 55px;
+  box-shadow: 0 0 20px rgba(0, 139, 253, 0.25);
+  text-align: center;
+
+}
+
+.stats p:nth-last-child(1) {
+  margin-left: 50%;
+}
+
+.coin {
+  height: 150px;
+  width: 150px;
+  position: relative;
+  margin: 32px auto;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.coin img {
+  width: 145px;
+  border-radius: 50%;
+}
+
+.heads,
+.tails {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.tails {
+  transform: rotateX(180deg);
+}
+
+@keyframes spin-tails {
+  0% {
+    transform: rotateX(0);
+  }
+
+  100% {
+    transform: rotateX(1980deg);
+  }
+}
+
+@keyframes spin-heads {
+  0% {
+    transform: rotateX(0);
+  }
+
+  100% {
+    transform: rotateX(2160deg);
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  width: 48%;
+  padding: 15px 0;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#flip-button {
+  background-color: #1C86FF;
+  color: #ffffff;
+}
+
+#flip-button:disabled {
+  background-color: #000;
+  border-color: #e1e0ee;
+  color: #fff;
+}
+
+#reset-button {
+  background-color: #FF894A;
+  color: white;
+}
+
+#reset-button:hover {
+  background-color: orangered;
+  transition: .5s;
+}
+.info-Me {
+  background: #4E5DFF;
+  height: 10rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.info-Me img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.info-Me h3 {
+  font-family: 'Amatic SC', cursive;
+  color: #fff;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.info-Me i {
+  color: rgba(255, 150, 118, 1);
+  font-size: 2rem;
+}
+
+footer {
+  height: 20vh;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 25px;
+}
